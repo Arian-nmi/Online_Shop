@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detail</title>
+</head>
+<body>
+    {% for product in products %}
+    <li><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }} </a></li>
+        <li>{{ product.description }} </li>
+        <li>{{ product.price }} </li>
+        <li>{{ product.stock_quantity }} </li>
+    {% end for %}
+
+
+</body>
+</html>
