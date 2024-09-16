@@ -14,4 +14,8 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = serializers
+<<<<<<< HEAD
         fields = "__all__"
+=======
+        fields = "__all__"
+>>>>>>> 9750d19510afba2425c8776ebd6db6b453cef295
