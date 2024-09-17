@@ -1,6 +1,6 @@
 {% extends "_base.html" %}
 {% load static %}
-{% block title %}{{ block.super }} | Home{% end block %}
+{% block title %}{{ block.super }} | Home{% endblock %}
 {% block content %}
     <!--{#    <img src="/static/insta.png" alt="insta" class="block w-[40vw] mx-auto h-auto my-10">#}-->
     <!--{#    <img src="{% static 'insta.png' %}" alt="insta" class="block w-[40vw] mx-auto h-auto my-10">#}-->
@@ -16,7 +16,7 @@
     </div>
     <hr>
     <button class="py-4 px-8 text-5xl block mx-auto w-6/12">Change it</button>
-{% end block %}
+{% endblock %}
 {% block extra_body %}
     <script>
         const titleEl = document.querySelector("#title");
@@ -52,4 +52,4 @@
         })
 
     </script>
-{% end block %}
+{% endblock %}
