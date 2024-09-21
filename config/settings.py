@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     'products',
     'orders',
 
-    # third-party :
-    'rest_framework'
+    # Third Party:
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -62,7 +63,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+
         'DIRS': [BASE_DIR / 'templates'],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

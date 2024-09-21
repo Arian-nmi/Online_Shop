@@ -15,3 +15,5 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = serializers
         fields = "__all__"
+
+

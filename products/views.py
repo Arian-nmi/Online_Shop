@@ -1,14 +1,9 @@
-import json
-
+from django.shortcuts import get_object_or_404
 from products.models import Product, Category
 from django.shortcuts import render
-from django.http import HttpResponse
 from rest_framework.response import Response
-from rest_framework import status
 from rest_framework.decorators import api_view
-from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse, HttpResponseNotAllowed
-from products.serializers import ProductSerializer, CategorySerializer
+from products.serializers import ProductSerializer
 
 
 @api_view(['GET', 'POST'])
@@ -22,19 +17,21 @@ def product_list_creation(request):
         serializer = ProductSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
 
-    # products = Product.objects.all()
-    # return render(request, 'products/product_list.html', {'products': products})
+
+def products(request):
+    my_products = dict(Product.object.all())
+    return render(request, 'product_list.html', my_products)
 
 
-def product_detail(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-    return render(request, 'products/product_detail.html', {'product': product})
+def product_detail(request, pk):
+    product = Product.objects.get(pk=pk)
+    return render(request, 'product_detail.html', {'product': product})
 
 
 def category_product_list(request, category_id):
     category = get_object_or_404(Category, id=category_id)
-    products = Product.objects.filter(category=category)
-    return render(request, 'products/category_product_list.html', {'category': category, 'products': products})
+    product = Product.objects.filter(category=category)
+    return render(request, 'category_product_list.html', {'category': category, 'products': product})

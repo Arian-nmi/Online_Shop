@@ -9,7 +9,7 @@ class Order(models.Model):
     status = models.CharField(max_length=10, default='Pending')
 
     def __str__(self):
-        return f'Order {self.id} by {self.user.username}'
+        return self.user
 
 
 class OrderItem(models.Model):
@@ -19,4 +19,4 @@ class OrderItem(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return f"{self.quantity} of {self.product.name} for Order {self.order.id}"
+        return f'{self.quantity} of {self.product.name}'

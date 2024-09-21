@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ order.order }}</title>
+</head>
+<body>
+    <h1>{{ order.order }}</h1>
+    <p>price: {{ order.price }}</p>
+
+    <a href="{% url 'product_list' %}">back to order list</a>
+</body>
+</html>
