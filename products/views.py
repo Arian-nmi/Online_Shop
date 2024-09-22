@@ -23,15 +23,15 @@ def product_list_creation(request):
 
 def products(request):
     my_products = dict(Product.object.all())
-    return render(request, 'product_list.html', my_products)
+    return render(request, 'products/product_list.html', my_products)
 
 
 def product_detail(request, pk):
     product = Product.objects.get(pk=pk)
-    return render(request, 'product_detail.html', {'product': product})
+    return render(request, 'products/product_detail.html', {'product': product})
 
 
 def category_product_list(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     product = Product.objects.filter(category=category)
-    return render(request, 'category_product_list.html', {'category': category, 'products': product})
+    return render(request, 'products/category_product_list.html', {'category': category, 'products': product})

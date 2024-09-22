@@ -23,9 +23,9 @@ def user_list(request):
 
 def users(request):
     user = dict(User.objects.all())
-    return render(request, 'user_list.html', user)
+    return render(request, 'users/user_list.html', user)
 
 
 def user_detail(request, pk):
     user = User.objects.get(pk=pk)
-    return render(request, 'user_detail.html', {'user': user})
+    return render(request, 'users/user_detail.html', {'user': user})

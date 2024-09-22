@@ -23,9 +23,9 @@ def order_list(request):
 
 def order(request):
     my_order = dict(OrderItem.object.all())
-    return render(request, 'order_list.html', my_order)
+    return render(request, 'orders/order_list.html', my_order)
 
 
 def order_detail(request, pk):
     order = OrderItem.objects.get(pk=pk)
-    return render(request, 'order_dtail.html', {'order': order})
+    return render(request, 'orders/order_detail.html', {'order': order})
