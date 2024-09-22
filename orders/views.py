@@ -21,11 +21,21 @@ def order_list(request):
         return Response(serializer.errors, status=400)
 
 
+<<<<<<< HEAD
 def order(request):
     my_order = dict(OrderItem.object.all())
     return render(request, 'orders/order_list.html', my_order)
+=======
+def products(request):
+    context = dict(OrderItem.object.all())
+    return render(request, 'order_list.html', context)
+>>>>>>> 8da2cb7b478197b9389d7f1535fcc5b4cb1cb9f2
 
 
 def order_detail(request, pk):
     order = OrderItem.objects.get(pk=pk)
+<<<<<<< HEAD
     return render(request, 'orders/order_detail.html', {'order': order})
+=======
+    return render(request, 'order_dtail.html', {'order': order})
+>>>>>>> 8da2cb7b478197b9389d7f1535fcc5b4cb1cb9f2

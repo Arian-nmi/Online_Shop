@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,3 +13,16 @@
     <a href="{% url 'product_list' %}">back to product list</a>
 </body>
 </html>
+=======
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        {{ product.name }}
+        {{ product.description }}
+        {{ product.price }}
+        {{ product.stock_quantity }}
+        {{ product.image }}
+        {{ product.category }}
+    </div>
+{% end block %}
+>>>>>>> 8da2cb7b478197b9389d7f1535fcc5b4cb1cb9f2

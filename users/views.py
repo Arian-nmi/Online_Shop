@@ -21,6 +21,7 @@ def user_list(request):
         return Response(serializer.errors, status=400)
 
 
+<<<<<<< HEAD
 def users(request):
     user = dict(User.objects.all())
     return render(request, 'users/user_list.html', user)
@@ -29,3 +30,13 @@ def users(request):
 def user_detail(request, pk):
     user = User.objects.get(pk=pk)
     return render(request, 'users/user_detail.html', {'user': user})
+=======
+def user(request):
+    context = dict(User.objects.all())
+    return render(request, 'user_list.html', context)
+
+
+def user_detail(request, pk):
+    users = User.objects.get(pk=pk)
+    return render(request, 'user_detail.html', {'users': users})
+>>>>>>> 8da2cb7b478197b9389d7f1535fcc5b4cb1cb9f2
